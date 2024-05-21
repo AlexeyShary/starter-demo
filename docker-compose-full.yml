@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  sample-db:
+    image: postgres:14-alpine
+    ports:
+      - "8081:5432"
+    environment:
+      - POSTGRES_DB=starterdemo
+      - POSTGRES_USER=starterdemo
+      - POSTGRES_PASSWORD=starterdemo
+
+  sample-service-app:
+    build: ./sample-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sample-db
+    environment:
+      - DATABASE_URL=jdbc:postgresql://sample-db:5432/starterdemo
+      - DATABASE_USERNAME=starterdemo
+      - DATABASE_PASSWORD=starterdemo

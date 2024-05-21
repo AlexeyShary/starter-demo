@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "282950a0-6f55-4eaf-85af-55cb62f8f79f",
+		"name": "LoggingStarterDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26948900"
+	},
+	"item": [
+		{
+			"name": "Etc",
+			"item": [
+				{
+					"name": "Get hi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/etc/hi"
+					},
+					"response": []
+				},
+				{
+					"name": "Get hi by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/etc/hi/Postman"
+					},
+					"response": []
+				},
+				{
+					"name": "Get random without delay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/etc/random"
+					},
+					"response": []
+				},
+				{
+					"name": "Get random with delay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/etc/random?useDelay=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"etc",
+								"random"
+							],
+							"query": [
+								{
+									"key": "useDelay",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test user\",\r\n    \"age\": 30\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Patched user\",\r\n    \"age\": 40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/users/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
